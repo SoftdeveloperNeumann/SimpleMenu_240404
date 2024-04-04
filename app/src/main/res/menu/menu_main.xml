@@ -4,5 +4,34 @@
 
     <item
         android:id="@+id/action_settings"
-        android:title="Settings" />
+        android:title="Settings"
+        android:orderInCategory="10"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="Delete"
+        android:orderInCategory="30"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_send"
+        android:icon="@android:drawable/ic_menu_send"
+        android:title="Send"
+        android:orderInCategory="20"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_sub"
+        android:title="SubMenu">
+        <menu>
+            <item
+                android:id="@+id/action_open"
+                android:title="Open" />
+        </menu>
+    </item>
 </menu>
