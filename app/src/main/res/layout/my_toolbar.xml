@@ -6,10 +6,10 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/holo_blue_dark"
+    android:background="?attr/colorPrimary"
     android:minHeight="?attr/actionBarSize"
-    android:theme="?attr/actionBarTheme"
+    android:theme="@style/Theme.SimpleMenu"
     app:title="Das erste Menü"
-    app:titleTextColor="#FDFCFC"
+    app:titleTextColor="?attr/colorOnPrimary"
     tools:layout_editor_absoluteX="1dp"
     tools:layout_editor_absoluteY="72dp" />
