@@ -1,6 +1,7 @@
 package com.example.simplemenu
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
@@ -46,6 +47,16 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+        // Nutzung eines Contextmenu auf einer Textview
+        binding.tvBgColor.setOnCreateContextMenuListener { contextMenu, view, contextMenuInfo ->
+            menuInflater.inflate(R.menu.menu_color,contextMenu)
+        }
+
+        // wenn im Lambda Parameter nicht verwendet werden, können sie durch _ ersetzt werden
+//        binding.tvBgColor.setOnCreateContextMenuListener { contextMenu, _, _ ->
+//            menuInflater.inflate(R.menu.menu_color, contextMenu)
+//        }
+
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -80,6 +91,15 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
 
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_red -> binding.root.setBackgroundColor(Color.RED)
+            R.id.action_green -> binding.root.setBackgroundColor(Color.GREEN)
+            R.id.action_white -> binding.root.setBackgroundColor(Color.WHITE)
+        }
+        return super.onContextItemSelected(item)
     }
 }
 
